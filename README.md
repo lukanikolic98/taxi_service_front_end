@@ -1,2 +1,2 @@
-# Taxi ordering service - front end
+Taxi ordering service - front end
 Projekat iz KTS/NVT/MRS/ISA
