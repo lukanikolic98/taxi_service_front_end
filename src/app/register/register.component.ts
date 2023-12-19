@@ -13,7 +13,7 @@ export class RegisterComponent {
   public registerForm!: FormGroup;
   constructor(
     //private router: Router,
-    //private authService: AuthService,
+    private authService: AuthService,
     private formBuilder: FormBuilder
   ) {
     this.registerForm = this.formBuilder.group(
@@ -42,7 +42,11 @@ export class RegisterComponent {
     // UPDATE USER STATE
     // SEND POST REQUEST FOR USER
 
-    //this.authService.register();
+    console.log('krecem register');
+    this.authService
+      .register(this.registerForm.value)
+      .subscribe((e) => console.log({ e }));
+    console.log('uspeo proci register');
     //this.router.navigate(['/home']);
   }
 }
