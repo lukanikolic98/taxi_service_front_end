@@ -1,0 +1,96 @@
+<div class="register-page">
+  <div class="container">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <h1>Registration form</h1>
+      <div>
+        <label for="email">Email:</label>
+        <input type="text" name="email" formControlName="email" />
+      </div>
+      <div
+        *ngIf="(regForm['email'].errors?.['required'] && regForm['email'].dirty) || (regForm['email'].errors?.['email'] && regForm['email'].dirty)"
+        class="alert"
+      >
+        Email is required!
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" name="password" formControlName="password" />
+      </div>
+      <div
+        *ngIf="regForm['password'].errors?.['required'] && regForm['password'].dirty"
+        class="alert"
+      >
+        Password is required!
+      </div>
+      <div>
+        <label for="confirmPassword">Password:</label>
+        <input
+          type="password"
+          name="confirmPassword"
+          formControlName="confirmPassword"
+        />
+      </div>
+      <div
+        *ngIf="regForm['confirmPassword'].errors?.['required'] && regForm['confirmPassword'].dirty"
+        class="alert"
+      >
+        Confirm Password is required!
+      </div>
+      <div
+        *ngIf="
+          registerForm.errors?.['passwordMatchError'] && regForm['confirmPassword'].dirty
+        "
+        class="alert"
+      >
+        Passwords don't match!
+      </div>
+      <div>
+        <label for="firstName">First Name:</label>
+        <input type="text" name="firstName" formControlName="firstName" />
+      </div>
+      <div
+        *ngIf="regForm['firstName'].errors?.['required'] && regForm['firstName'].dirty"
+        class="alert"
+      >
+        First name is required!
+      </div>
+      <div>
+        <label for="lastName">Last Name:</label>
+        <input type="text" name="lastName" formControlName="lastName" />
+      </div>
+      <div
+        *ngIf="regForm['lastName'].errors?.['required'] && regForm['lastName'].dirty"
+        class="alert"
+      >
+        Last name is required!
+      </div>
+      <div>
+        <label for="city">City:</label>
+        <input type="text" name="city" formControlName="city" />
+      </div>
+      <div
+        *ngIf="regForm['city'].errors?.['required'] && regForm['city'].dirty"
+        class="alert"
+      >
+        City is required!
+      </div>
+      <div>
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" name="phoneNumber" formControlName="phoneNumber" />
+      </div>
+      <div
+        *ngIf="regForm['phoneNumber'].errors?.['required'] && regForm['phoneNumber'].dirty"
+        class="alert"
+      >
+        Phone number is required!
+      </div>
+      <button
+        type="submit"
+        value="Register"
+        [disabled]="registerForm.pristine || registerForm.invalid"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+form {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 500px;
+  border: 1px black solid;
+  align-items: center;
+  justify-self: center;
+  background-color: whitesmoke;
+}
+
+button {
+  border-radius: 7px;
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 10px;
+  background-color: whitesmoke;
+}
+button:hover {
+  background-color: grey;
+}
+
+h1 {
+  margin: 1rem;
+}
+
+.alert {
+  color: red;
+}
